@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subscribo.Core", "Subscribo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subscribo.Grains", "Subscribo.Grains\Subscribo.Grains.csproj", "{8CD02CBF-1B00-4B2A-BA5F-8C14376EA9C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subscribo.Data", "Subscribo.Data\Subscribo.Data.csproj", "{7C6A5EC1-4423-406A-A801-066FF56B010B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8CD02CBF-1B00-4B2A-BA5F-8C14376EA9C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CD02CBF-1B00-4B2A-BA5F-8C14376EA9C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CD02CBF-1B00-4B2A-BA5F-8C14376EA9C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C6A5EC1-4423-406A-A801-066FF56B010B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C6A5EC1-4423-406A-A801-066FF56B010B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C6A5EC1-4423-406A-A801-066FF56B010B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C6A5EC1-4423-406A-A801-066FF56B010B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
