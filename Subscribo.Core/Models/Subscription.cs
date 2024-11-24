@@ -1,4 +1,6 @@
-﻿namespace Subscribo.Core.Models
+﻿using Subscribo.Core.Enums;
+
+namespace Subscribo.Core.Models
 {
     public record Subscription
     {
@@ -7,6 +9,6 @@
         public required decimal Price { get; init; }
         public required DateTime StartDate { get; init; }
         public DateTime? EndDate { get; init; }
-        public required string Status { get; init; }
+        public required SubscriptionStatus Status { get; init; }
     }
 }
