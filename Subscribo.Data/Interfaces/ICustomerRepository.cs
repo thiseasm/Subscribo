@@ -4,7 +4,7 @@ namespace Subscribo.Data.Interfaces
 {
     public interface ICustomerRepository
     {
-        Task CreateCustomerAsync(CustomerDTO customer, CancellationToken cancellationToken = default);
-        Task<CustomerDTO?> GetByIdAsync(int customerId, CancellationToken cancellationToken = default);
+        Task CreateCustomerAsync(CustomerDto customer, CancellationToken cancellationToken = default);
+        Task<CustomerDto?> GetByIdAsync(int customerId, CancellationToken cancellationToken = default);
     }
 }

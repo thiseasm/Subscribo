@@ -1,16 +1,16 @@
 ﻿namespace Subscribo.Data.DTOs
 {
-    public class SubscriptionDTO
+    public class SubscriptionDto
     {
-        public required int Id { get; set; }
-        public required int CustomerId { get; set; }
-        public required int PlanId { get; set; }
-        public required decimal Price { get; set; }
-        public required DateTime StartDate { get; set; }
-        public DateTime? EndDate { get; set; }
-        public required int StatusId { get; set; }
+        public required int Id { get; init; }
+        public required int CustomerId { get; init; }
+        public required int PlanId { get; init; }
+        public required decimal Price { get; init; }
+        public required DateTime StartDate { get; init; }
+        public DateTime? EndDate { get; init; }
+        public required int StatusId { get; init; }
 
 
-        public CustomerDTO Customer { get; set; }
+        public CustomerDto Customer { get; init; }
     }
 }

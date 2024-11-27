@@ -7,10 +7,10 @@ namespace Subscribo.Data.Repositories
 {
     public class InvoiceRepository(SubscriboContext dbContext) : IInvoiceRepository
     {
-        public async Task CreateInvoiceAsync(InvoiceDTO invoice, CancellationToken cancellationToken) 
+        public async Task CreateInvoiceAsync(InvoiceDto invoice, CancellationToken cancellationToken) 
             => await dbContext.Invoices.AddAsync(invoice, cancellationToken);
 
-        public async Task<InvoiceDTO?> GetByIdAsync(int invoiceId, CancellationToken cancellationToken) 
+        public async Task<InvoiceDto?> GetByIdAsync(int invoiceId, CancellationToken cancellationToken) 
             => await dbContext.Invoices
             .AsNoTracking()
             .Include(i => i.Subscription)
@@ -19,7 +19,7 @@ namespace Subscribo.Data.Repositories
 
         public async Task UpdateInvoiceStatusAsync(int invoiceId, int statusId, CancellationToken cancellationToken)
         {
-            InvoiceDTO invoice = new() 
+            InvoiceDto invoice = new() 
             {
                 Id = invoiceId, 
                 StatusId = statusId 

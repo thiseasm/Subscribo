@@ -6,7 +6,7 @@ namespace Subscribo.Core.Extensions
 {
     public static class SubscriptionExtensions
     {
-        public static SubscriptionDTO ToDTO(this Subscription subscription)
+        public static SubscriptionDto ToDTO(this Subscription subscription)
         => new()
         {
             Id = subscription.Id,
@@ -18,7 +18,7 @@ namespace Subscribo.Core.Extensions
             Price = subscription.Price
         };
 
-        public static Subscription ToDomainObject(this SubscriptionDTO subscriptionDto)
+        public static Subscription ToDomainObject(this SubscriptionDto subscriptionDto)
         => new()
         {
             Id = subscriptionDto.Id,

@@ -5,8 +5,8 @@ namespace Subscribo.Data.Context
 {
     public class SubscriboContext(DbContextOptions<SubscriboContext> options) : DbContext(options)
     {
-        public DbSet<CustomerDTO> Customers { get; set; }
-        public DbSet<InvoiceDTO> Invoices { get; set; }
-        public DbSet<SubscriptionDTO> Subscriptions { get; set; }
+        public DbSet<CustomerDto> Customers { get; set; }
+        public DbSet<InvoiceDto> Invoices { get; set; }
+        public DbSet<SubscriptionDto> Subscriptions { get; set; }
     }
 }

@@ -1,9 +1,9 @@
 ﻿namespace Subscribo.Data.DTOs
 {
-    public class CustomerDTO
+    public class CustomerDto
     {
-        public required int Id { get; set; }
-        public required string Name { get; set; }
-        public required string Email { get; set; }
+        public required int Id { get; init; }
+        public required string Name { get; init; }
+        public required string Email { get; init; }
     }
 }

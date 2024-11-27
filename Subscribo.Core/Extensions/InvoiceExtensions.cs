@@ -7,7 +7,7 @@ namespace Subscribo.Core.Extensions
 {
     public static class InvoiceExtensions
     {
-        public static InvoiceDTO ToDTO(this Invoice invoice)
+        public static InvoiceDto ToDTO(this Invoice invoice)
         => new()
         {
             Id = invoice.Id,
@@ -17,7 +17,7 @@ namespace Subscribo.Core.Extensions
             IssueDate = invoice.IssueDate
         };
 
-        public static Invoice ToDomainObject(this InvoiceDTO invoiceDto)
+        public static Invoice ToDomainObject(this InvoiceDto invoiceDto)
         => new()
         {
             Id = invoiceDto.Id,
