@@ -6,6 +6,6 @@ namespace Subscribo.Data.Interfaces
     {
         Task<SubscriptionDto?> GetByIdAsync(int subscriptionId, CancellationToken cancellationToken = default);
         Task CreateSubscriptionAsync(SubscriptionDto subscription, CancellationToken cancellationToken = default);
-        Task DeactivateSubscriptionAsync(SubscriptionDto subscription, CancellationToken cancellationToken = default);
+        void DeactivateSubscription(SubscriptionDto subscription, CancellationToken cancellationToken = default);
     }
 }

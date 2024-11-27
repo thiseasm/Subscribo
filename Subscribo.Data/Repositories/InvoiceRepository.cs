@@ -17,16 +17,10 @@ namespace Subscribo.Data.Repositories
             .ThenInclude(s => s.Customer)
             .FirstOrDefaultAsync(i => i.Id == invoiceId,  cancellationToken);
 
-        public async Task UpdateInvoiceStatusAsync(int invoiceId, int statusId, CancellationToken cancellationToken)
+        public void UpdateInvoiceStatus(InvoiceDto invoice, CancellationToken cancellationToken)
         {
-            InvoiceDto invoice = new() 
-            {
-                Id = invoiceId, 
-                StatusId = statusId 
-            };
             dbContext.Attach(invoice);
             dbContext.Entry(invoice).Property(i => i.StatusId).IsModified = true;
-            await dbContext.SaveChangesAsync(cancellationToken);
         }
     }
 }

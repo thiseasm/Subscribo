@@ -15,10 +15,9 @@ public class SubscriptionRepository(SubscriboContext dbContext) : ISubscriptionR
     public async Task CreateSubscriptionAsync(SubscriptionDto subscription, CancellationToken cancellationToken)
         => await dbContext.Subscriptions.AddAsync(subscription, cancellationToken);
 
-    public async Task DeactivateSubscriptionAsync(SubscriptionDto subscription, CancellationToken cancellationToken = default)
+    public void DeactivateSubscription(SubscriptionDto subscription, CancellationToken cancellationToken)
     {
         dbContext.Attach(subscription);
         dbContext.Entry(subscription).Property(i => i.StatusId).IsModified = true;
-        await dbContext.SaveChangesAsync(cancellationToken);
     }
 }
