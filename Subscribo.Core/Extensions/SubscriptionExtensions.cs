@@ -6,7 +6,7 @@ namespace Subscribo.Core.Extensions
 {
     public static class SubscriptionExtensions
     {
-        public static SubscriptionDto ToDTO(this Subscription subscription)
+        public static SubscriptionDto ToDto(this Subscription subscription)
         => new()
         {
             Id = subscription.Id,

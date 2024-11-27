@@ -5,7 +5,7 @@ namespace Subscribo.Core.Extensions
 {
     public static class CustomerExtensions
     {
-        public static CustomerDto ToDTO(this Customer customer)
+        public static CustomerDto ToDto(this Customer customer)
         => new()
         {
             Id = customer.Id,

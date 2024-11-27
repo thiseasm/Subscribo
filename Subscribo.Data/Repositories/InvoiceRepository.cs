@@ -15,7 +15,7 @@ namespace Subscribo.Data.Repositories
             .AsNoTracking()
             .Include(i => i.Subscription)
             .ThenInclude(s => s.Customer)
-            .FirstOrDefaultAsync(i => i.Id == invoiceId);
+            .FirstOrDefaultAsync(i => i.Id == invoiceId,  cancellationToken);
 
         public async Task UpdateInvoiceStatusAsync(int invoiceId, int statusId, CancellationToken cancellationToken)
         {
