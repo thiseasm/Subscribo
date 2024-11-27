@@ -9,5 +9,8 @@
         public required DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         public required int StatusId { get; set; }
+
+
+        public CustomerDTO Customer { get; set; }
     }
 }

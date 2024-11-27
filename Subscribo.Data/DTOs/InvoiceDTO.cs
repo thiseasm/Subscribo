@@ -2,10 +2,13 @@
 {
     public class InvoiceDTO
     {
-        public required int Id { get; set; }
-        public required int SubscriptionId { get; set; }
-        public required DateTime IssueDate { get; set; }
-        public required decimal Amount { get; set; }
-        public required int StatusId { get; set; }
+        public int Id { get; set; }
+        public int SubscriptionId { get; set; }
+        public DateTime IssueDate { get; set; }
+        public decimal Amount { get; set; }
+        public int StatusId { get; set; }
+
+
+        public SubscriptionDTO Subscription { get; set; }
     }
 }
