@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Subscribo.Data\Subscribo.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
 </Project>
