@@ -10,8 +10,8 @@
     <PackageReference Include="Microsoft.Orleans.Core.Abstractions" Version="9.0.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Subscribo.Core\Subscribo.Core.csproj" />
+	</ItemGroup>
 
 </Project>

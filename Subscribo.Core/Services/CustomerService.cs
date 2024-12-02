@@ -19,5 +19,10 @@ namespace Subscribo.Core.Services
             CustomerDto? customer = await customerRepository.GetByIdAsync(customerId, cancellationToken);
             return customer?.ToDomainObject();
         }
+
+        public Task UpdateCustomerInfoAsync(Customer customer, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

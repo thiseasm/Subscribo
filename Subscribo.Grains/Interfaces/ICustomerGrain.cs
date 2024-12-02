@@ -1,6 +1,11 @@
-﻿namespace Subscribo.Grains.Interfaces;
+﻿using Orleans;
+using Subscribo.Core.Models.Requests;
 
-public interface ICustomerGrain
+namespace Subscribo.Grains.Interfaces;
+
+public interface ICustomerGrain : IGrainWithIntegerKey
 {
-    
+    Task UpdateCustomerInfoAsync(string name, string emailAddress);
+    Task CreateSubscriptionAsync(CreateSubscriptionRequest subscriptionRequest, CancellationToken cancellationToken = default);
+    Task CancelCurrentSubscriptionAsync();
 }

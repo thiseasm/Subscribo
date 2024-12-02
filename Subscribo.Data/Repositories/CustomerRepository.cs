@@ -12,7 +12,14 @@ namespace Subscribo.Data.Repositories
             await dbContext.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task<CustomerDto?> GetByIdAsync(int customerId, CancellationToken cancellationToken) => await dbContext.Customers.FindAsync([customerId], cancellationToken); 
-        
+        public async Task<CustomerDto?> GetByIdAsync(int customerId, CancellationToken cancellationToken) => await dbContext.Customers.FindAsync([customerId], cancellationToken);
+
+        public async Task UpdateCustomerInfoAsync(CustomerDto customer, CancellationToken cancellationToken = default)
+        {
+            dbContext.Attach(customer);
+            dbContext.Entry(customer).Property(i => i.Name).IsModified = true;
+            dbContext.Entry(customer).Property(i => i.Email).IsModified = true;
+            await dbContext.SaveChangesAsync(cancellationToken);
+        }
     }
 }
