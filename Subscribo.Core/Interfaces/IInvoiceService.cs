@@ -5,8 +5,8 @@ namespace Subscribo.Core.Interfaces
 {
     public interface IInvoiceService
     {
-        Task<Invoice?> GetByIdAsync(int invoiceId, CancellationToken cancellationToken);
-        Task CreateInvoiceAsync(Invoice invoice, CancellationToken cancellationToken);
-        Task UpdateInvoiceStatusAsync(int invoiceId, InvoiceStatus newStatus, CancellationToken cancellationToken);
+        Task<Invoice?> GetByIdAsync(int invoiceId, CancellationToken cancellationToken = default);
+        Task CreateInvoiceAsync(Invoice invoice, CancellationToken cancellationToken = default);
+        Task UpdateInvoiceStatusAsync(int invoiceId, InvoiceStatus newStatus, CancellationToken cancellationToken = default);
     }
 }

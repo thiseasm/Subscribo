@@ -1,4 +1,5 @@
-﻿using Subscribo.Core.Extensions;
+﻿using Subscribo.Core.Enums;
+using Subscribo.Core.Extensions;
 using Subscribo.Core.Interfaces;
 using Subscribo.Core.Models;
 using Subscribo.Data.DTOs;
@@ -8,6 +9,11 @@ namespace Subscribo.Core.Services
 {
     public class SubscriptionService(ISubscriptionRepository subscriptionRepository) : ISubscriptionService
     {
+        public async Task ActivateSubscriptionAsync(int subscriptionId, CancellationToken cancellationToken)
+        {
+            await subscriptionRepository.ActivateSubscriptionAsync(subscriptionId, (int)SubscriptionStatus.Active, cancellationToken); 
+        }
+
         public async Task CreateSubscriptionAsync(Subscription subscription, CancellationToken cancellationToken)
         {
             SubscriptionDto newSubscription = subscription.ToDto();

@@ -23,6 +23,20 @@ public class SubscriptionRepository(SubscriboContext dbContext) : ISubscriptionR
     {
         dbContext.Attach(subscription);
         dbContext.Entry(subscription).Property(i => i.StatusId).IsModified = true;
+        dbContext.Entry(subscription).Property(i => i.EndDate).IsModified = true;
+        await dbContext.SaveChangesAsync(cancellationToken);
+    }
+
+    public async Task ActivateSubscriptionAsync(int subscriptionId, int statusId, CancellationToken cancellationToken)
+    {
+        SubscriptionDto subscription = new()
+        {
+            Id = subscriptionId,
+            StatusId = statusId
+        };
+
+        dbContext.Attach(subscription);
+        dbContext.Entry(subscription).Property(i => i.StatusId).IsModified = true;
         await dbContext.SaveChangesAsync(cancellationToken);
     }
 }

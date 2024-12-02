@@ -5,5 +5,7 @@
         public required int Id { get; init; }
         public required string Name { get; init; }
         public required string Email { get; init; }
+
+        public ICollection<SubscriptionDto> Subscriptions { get; } = new List<SubscriptionDto>();
     }
 }

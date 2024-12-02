@@ -4,6 +4,7 @@ namespace Subscribo.Grains.Interfaces;
 
 public interface ISubscriptionGrain : IGrainWithIntegerKey
 {
-    Task GenerateInvoice();
-    Task BeginSubscription();
+    Task GenerateInvoiceAsync();
+    Task BeginSubscriptionAsync();
+    Task EndSubscriptionAsync();
 }

@@ -32,6 +32,7 @@ namespace Subscribo.Grains.Implementations
                 throw new EntityNotFoundException($"Customer with ID {_customer.Id} has no active subscriptions to cancel.");
             }
 
+
             activeSubscription.EndDate = DateTime.UtcNow;
             activeSubscription.Status = Core.Enums.SubscriptionStatus.Inactive;
 
@@ -53,6 +54,7 @@ namespace Subscribo.Grains.Implementations
             await subscriptionService.CreateSubscriptionAsync(subscription, cancellationToken);
 
             var subscriptionGrain = GrainFactory.GetGrain<ISubscriptionGrain>(subscription.Id);
+            await subscriptionGrain.BeginSubscriptionAsync();
         }
 
         public async Task UpdateCustomerInfoAsync(string name, string emailAddress)

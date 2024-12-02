@@ -18,7 +18,8 @@ namespace Subscribo.Core.Extensions
         {
             Id = customerDto.Id,
             Name = customerDto.Name,
-            Email = customerDto.Email
+            Email = customerDto.Email,
+            Subscriptions = customerDto.Subscriptions.Select(x => x.ToDomainObject()).ToList()
         };
     }
 }
