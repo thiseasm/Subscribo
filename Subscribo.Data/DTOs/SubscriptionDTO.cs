@@ -2,15 +2,15 @@
 {
     public class SubscriptionDto
     {
-        public int Id { get; init; }
-        public int CustomerId { get; init; }
-        public int PlanId { get; init; }
-        public decimal Price { get; init; }
-        public DateTime StartDate { get; init; }
-        public DateTime? EndDate { get; init; }
-        public int StatusId { get; init; }
+        public int SubscriptionId { get; set; }
+        public int CustomerId { get; set; }
+        public int PlanId { get; set; }
+        public decimal Price { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
+        public int StatusId { get; set; }
 
 
-        public CustomerDto Customer { get; init; }
+        public CustomerDto Customer { get; set; }
     }
 }

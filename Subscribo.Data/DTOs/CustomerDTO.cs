@@ -2,9 +2,9 @@
 {
     public class CustomerDto
     {
-        public required int Id { get; init; }
-        public required string Name { get; init; }
-        public required string Email { get; init; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
 
         public ICollection<SubscriptionDto> Subscriptions { get; } = new List<SubscriptionDto>();
     }

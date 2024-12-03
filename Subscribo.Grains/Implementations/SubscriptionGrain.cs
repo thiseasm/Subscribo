@@ -1,6 +1,6 @@
 ﻿using Orleans;
 using Subscribo.Core.Abstractions.Enums;
-using Subscribo.Core.Abstractions.Interfaces;
+using Subscribo.Core.Abstractions.Interfaces.Services;
 using Subscribo.Core.Abstractions.Models;
 using Subscribo.Grains.Exceptions;
 using Subscribo.Grains.Interfaces;

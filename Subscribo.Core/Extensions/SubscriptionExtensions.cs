@@ -9,7 +9,7 @@ namespace Subscribo.Core.Extensions
         public static SubscriptionDto ToDto(this Subscription subscription)
         => new()
         {
-            Id = subscription.Id,
+            SubscriptionId = subscription.Id,
             CustomerId = subscription.CustomerId,           
             StatusId = (int)subscription.Status,
             StartDate = subscription.StartDate,
@@ -21,7 +21,7 @@ namespace Subscribo.Core.Extensions
         public static Subscription ToDomainObject(this SubscriptionDto subscriptionDto)
         => new()
         {
-            Id = subscriptionDto.Id,
+            Id = subscriptionDto.SubscriptionId,
             CustomerId = subscriptionDto.CustomerId,
             Status = (SubscriptionStatus)subscriptionDto.StatusId,
             StartDate = subscriptionDto.StartDate,

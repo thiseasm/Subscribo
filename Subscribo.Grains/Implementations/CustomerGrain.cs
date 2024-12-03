@@ -1,6 +1,6 @@
 ﻿using Orleans;
 using Subscribo.Core.Abstractions.Enums;
-using Subscribo.Core.Abstractions.Interfaces;
+using Subscribo.Core.Abstractions.Interfaces.Services;
 using Subscribo.Core.Abstractions.Models;
 using Subscribo.Core.Abstractions.Models.Requests;
 using Subscribo.Grains.Exceptions;
@@ -25,7 +25,7 @@ namespace Subscribo.Grains.Implementations
             _customer = customer;
         }
 
-        public async Task CancelCurrentSubscriptionAsync()
+        public async Task CancelCurrentSubscriptionAsync(CancellationToken cancellationToken)
         {
             var activeSubscription = _customer.Subscriptions.FirstOrDefault(x => x.Status == SubscriptionStatus.Active);
             if (activeSubscription == null)
@@ -55,12 +55,14 @@ namespace Subscribo.Grains.Implementations
             await subscriptionGrain.BeginSubscriptionAsync();
         }
 
-        public async Task UpdateCustomerInfoAsync(string name, string emailAddress)
+        public async Task UpdateCustomerInfoAsync(string name, string emailAddress, CancellationToken cancellationToken)
         {
-            await customerService.UpdateCustomerInfoAsync(_customer);
+            await customerService.UpdateCustomerInfoAsync(_customer, cancellationToken);
 
             _customer.Name = name;
             _customer.Email = emailAddress;
         }
+
+        public Task<Customer> GetById() => Task.FromResult( _customer );
     }
 }

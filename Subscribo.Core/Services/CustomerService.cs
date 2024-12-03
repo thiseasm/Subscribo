@@ -1,4 +1,4 @@
-﻿using Subscribo.Core.Abstractions.Interfaces;
+﻿using Subscribo.Core.Abstractions.Interfaces.Services;
 using Subscribo.Core.Abstractions.Models;
 using Subscribo.Core.Extensions;
 using Subscribo.Data.DTOs;
@@ -8,10 +8,14 @@ namespace Subscribo.Core.Services
 {
     public class CustomerService(ICustomerRepository customerRepository) : ICustomerService
     {
-        public async Task CreateCustomerAsync(Customer customer, CancellationToken cancellationToken)
+        public async Task<int> CreateCustomerAsync(Customer customer, CancellationToken cancellationToken)
         {
-            CustomerDto newCustomer = customer.ToDto();
-            await customerRepository.CreateCustomerAsync(newCustomer, cancellationToken);
+            CustomerDto newCustomer = new() 
+            { 
+                Email = customer.Email,
+                Name = customer.Name
+            };
+            return await customerRepository.CreateCustomerAsync(newCustomer, cancellationToken);
         }
 
         public async Task<Customer?> GetCustomerByIdAsync(int customerId, CancellationToken cancellationToken)

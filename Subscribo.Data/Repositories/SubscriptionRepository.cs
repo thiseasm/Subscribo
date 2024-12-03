@@ -11,7 +11,7 @@ public class SubscriptionRepository(SubscriboContext dbContext) : ISubscriptionR
         => await dbContext.Subscriptions
             .AsNoTracking()
             .Include(s => s.Customer)
-            .FirstOrDefaultAsync(s => s.Id == subscriptionId, cancellationToken);
+            .FirstOrDefaultAsync(s => s.SubscriptionId == subscriptionId, cancellationToken);
 
     public async Task CreateSubscriptionAsync(SubscriptionDto subscription, CancellationToken cancellationToken)
     { 
@@ -31,7 +31,7 @@ public class SubscriptionRepository(SubscriboContext dbContext) : ISubscriptionR
     {
         SubscriptionDto subscription = new()
         {
-            Id = subscriptionId,
+            SubscriptionId = subscriptionId,
             StatusId = statusId
         };
 

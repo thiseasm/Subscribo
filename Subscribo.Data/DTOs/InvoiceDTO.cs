@@ -2,13 +2,13 @@
 {
     public class InvoiceDto
     {
-        public int Id { get; init; }
-        public int SubscriptionId { get; init; }
-        public DateTime IssueDate { get; init; }
-        public decimal Amount { get; init; }
-        public int StatusId { get; init; }
+        public int InvoiceId { get; set; }
+        public int SubscriptionId { get; set; }
+        public DateTime IssueDate { get; set; }
+        public decimal Amount { get; set; }
+        public int StatusId { get; set; }
 
 
-        public SubscriptionDto Subscription { get; init; }
+        public SubscriptionDto Subscription { get; set; }
     }
 }

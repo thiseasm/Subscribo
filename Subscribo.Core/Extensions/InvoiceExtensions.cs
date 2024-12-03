@@ -9,7 +9,7 @@ namespace Subscribo.Core.Extensions
         public static InvoiceDto ToDto(this Invoice invoice)
         => new()
         {
-            Id = invoice.Id,
+            InvoiceId = invoice.Id,
             Amount = invoice.Amount,
             StatusId = (int)invoice.Status,
             SubscriptionId = invoice.SubscriptionId,
@@ -19,7 +19,7 @@ namespace Subscribo.Core.Extensions
         public static Invoice ToDomainObject(this InvoiceDto invoiceDto)
         => new()
         {
-            Id = invoiceDto.Id,
+            Id = invoiceDto.InvoiceId,
             Amount = invoiceDto.Amount,
             Status = (InvoiceStatus)invoiceDto.StatusId,
             SubscriptionId = invoiceDto.SubscriptionId,
