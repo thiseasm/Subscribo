@@ -1,7 +1,8 @@
 ﻿using Orleans;
-using Subscribo.Core.Interfaces;
-using Subscribo.Core.Models;
-using Subscribo.Core.Models.Requests;
+using Subscribo.Core.Abstractions.Enums;
+using Subscribo.Core.Abstractions.Interfaces;
+using Subscribo.Core.Abstractions.Models;
+using Subscribo.Core.Abstractions.Models.Requests;
 using Subscribo.Grains.Exceptions;
 using Subscribo.Grains.Interfaces;
 
@@ -26,7 +27,7 @@ namespace Subscribo.Grains.Implementations
 
         public async Task CancelCurrentSubscriptionAsync()
         {
-            var activeSubscription = _customer.Subscriptions.FirstOrDefault(x => x.Status == Core.Enums.SubscriptionStatus.Active);
+            var activeSubscription = _customer.Subscriptions.FirstOrDefault(x => x.Status == SubscriptionStatus.Active);
             if (activeSubscription == null)
             {
                 throw new EntityNotFoundException($"Customer with ID {_customer.Id} has no active subscriptions to cancel.");
@@ -45,7 +46,7 @@ namespace Subscribo.Grains.Implementations
                 Price = subscriptionRequest.Price,
                 StartDate = subscriptionRequest.StartDate,
                 EndDate = subscriptionRequest.EndDate,
-                Status = Core.Enums.SubscriptionStatus.Inactive
+                Status = SubscriptionStatus.Inactive
             };
 
             await subscriptionService.CreateSubscriptionAsync(subscription, cancellationToken);

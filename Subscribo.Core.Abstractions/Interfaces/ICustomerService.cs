@@ -1,6 +1,6 @@
-﻿using Subscribo.Core.Models;
+﻿using Subscribo.Core.Abstractions.Models;
 
-namespace Subscribo.Core.Interfaces;
+namespace Subscribo.Core.Abstractions.Interfaces;
 
 public interface ICustomerService
 {

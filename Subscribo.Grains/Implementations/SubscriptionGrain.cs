@@ -1,6 +1,7 @@
 ﻿using Orleans;
-using Subscribo.Core.Interfaces;
-using Subscribo.Core.Models;
+using Subscribo.Core.Abstractions.Enums;
+using Subscribo.Core.Abstractions.Interfaces;
+using Subscribo.Core.Abstractions.Models;
 using Subscribo.Grains.Exceptions;
 using Subscribo.Grains.Interfaces;
 
@@ -26,7 +27,7 @@ namespace Subscribo.Grains.Implementations
         {
             await subscriptionService.ActivateSubscriptionAsync(_subscription.Id);
 
-            _subscription.Status = Core.Enums.SubscriptionStatus.Active;
+            _subscription.Status = SubscriptionStatus.Active;
         }
 
         public Task GenerateInvoiceAsync()
@@ -40,13 +41,13 @@ namespace Subscribo.Grains.Implementations
             {
                 Id = _subscription.Id,
                 EndDate = DateTime.UtcNow,
-                Status = Core.Enums.SubscriptionStatus.Inactive
+                Status = SubscriptionStatus.Inactive
             };
 
             await subscriptionService.DeactivateSubscriptionAsync(activeSubscription);
 
             _subscription.EndDate = DateTime.UtcNow;
-            _subscription.Status = Core.Enums.SubscriptionStatus.Inactive;
+            _subscription.Status = SubscriptionStatus.Inactive;
         }
     }
 }

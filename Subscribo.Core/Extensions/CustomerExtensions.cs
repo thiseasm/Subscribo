@@ -1,4 +1,4 @@
-﻿using Subscribo.Core.Models;
+﻿using Subscribo.Core.Abstractions.Models;
 using Subscribo.Data.DTOs;
 
 namespace Subscribo.Core.Extensions

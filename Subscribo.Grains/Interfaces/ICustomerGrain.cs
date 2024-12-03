@@ -1,5 +1,5 @@
 ﻿using Orleans;
-using Subscribo.Core.Models.Requests;
+using Subscribo.Core.Abstractions.Models.Requests;
 
 namespace Subscribo.Grains.Interfaces;
 

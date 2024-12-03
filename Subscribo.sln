@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35514.174 d17.12
+VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subscribo.Host.WebApi", "Subscribo\Subscribo.Host.WebApi.csproj", "{F16D1FBA-F7DC-493C-8018-CB77BF4CF791}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subscribo.Grains", "Subscribo.Grains\Subscribo.Grains.csproj", "{8CD02CBF-1B00-4B2A-BA5F-8C14376EA9C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subscribo.Data", "Subscribo.Data\Subscribo.Data.csproj", "{7C6A5EC1-4423-406A-A801-066FF56B010B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subscribo.Core.Abstractions", "Subscribo.Core.Abstractions\Subscribo.Core.Abstractions.csproj", "{79F5DC9F-7C44-4600-945D-1EFCBA7B3C70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7C6A5EC1-4423-406A-A801-066FF56B010B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C6A5EC1-4423-406A-A801-066FF56B010B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C6A5EC1-4423-406A-A801-066FF56B010B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79F5DC9F-7C44-4600-945D-1EFCBA7B3C70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79F5DC9F-7C44-4600-945D-1EFCBA7B3C70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79F5DC9F-7C44-4600-945D-1EFCBA7B3C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79F5DC9F-7C44-4600-945D-1EFCBA7B3C70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

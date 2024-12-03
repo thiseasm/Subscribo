@@ -1,7 +1,7 @@
-﻿using Subscribo.Core.Enums;
+﻿using Subscribo.Core.Abstractions.Enums;
+using Subscribo.Core.Abstractions.Interfaces;
+using Subscribo.Core.Abstractions.Models;
 using Subscribo.Core.Extensions;
-using Subscribo.Core.Interfaces;
-using Subscribo.Core.Models;
 using Subscribo.Data.DTOs;
 using Subscribo.Data.Interfaces;
 

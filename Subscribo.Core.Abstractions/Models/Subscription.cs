@@ -1,6 +1,6 @@
-﻿using Subscribo.Core.Enums;
+﻿using Subscribo.Core.Abstractions.Enums;
 
-namespace Subscribo.Core.Models
+namespace Subscribo.Core.Abstractions.Models
 {
     public record Subscription
     {

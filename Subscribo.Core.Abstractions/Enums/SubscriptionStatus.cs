@@ -1,4 +1,4 @@
-﻿namespace Subscribo.Core.Enums
+﻿namespace Subscribo.Core.Abstractions.Enums
 {
     public enum SubscriptionStatus
     {

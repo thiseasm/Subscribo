@@ -1,6 +1,6 @@
-﻿using Subscribo.Core.Extensions;
-using Subscribo.Core.Interfaces;
-using Subscribo.Core.Models;
+﻿using Subscribo.Core.Abstractions.Interfaces;
+using Subscribo.Core.Abstractions.Models;
+using Subscribo.Core.Extensions;
 using Subscribo.Data.DTOs;
 using Subscribo.Data.Interfaces;
 

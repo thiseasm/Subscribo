@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Subscribo.Data\Subscribo.Data.csproj" />
+	  <ProjectReference Include="..\Subscribo.Core.Abstractions\Subscribo.Core.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Managers\" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿namespace Subscribo.Core.Models
+﻿namespace Subscribo.Core.Abstractions.Models
 {
     public record Customer
     {
