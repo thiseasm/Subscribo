@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Subscribo.Data.Context;
+using Subscribo.Host.WebApi.Extensions;
 
 namespace Subscribo
 {
@@ -8,6 +11,9 @@ namespace Subscribo
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDbContextPool<SubscriboContext>(o => o.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL")));
+
+            builder.Services.AddRegistrations();
 
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

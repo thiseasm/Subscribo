@@ -12,9 +12,20 @@ namespace Subscribo.Core.Managers
 {
     public class CustomerManager(ILogger<CustomerManager> logger ,IClusterClient clusterClient) : ICustomerManager
     {
-        public Task<ApiResponse<int>> CreateCustomerAsync(CreateCustomerRequest request, CancellationToken cancellationToken = default)
+        public async Task<ApiResponse<int>> CreateCustomerAsync(CreateCustomerRequest request, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var customerCreatorGrain = clusterClient.GetGrain<ICustomerCreatorGrain>(0);
+                var customerId = await customerCreatorGrain.CreateCustomerAsync(request, cancellationToken);
+                return ApiResponse<int>.Success(customerId, ResponseCode.Created);
+            }
+            catch (Exception e) 
+            {
+                string errorMessage = $"{nameof(CustomerManager)} - {nameof(CreateCustomerAsync)} failed with error: {e.Message}";
+                logger.LogError(errorMessage);
+                return ApiResponse<int>.Fail(e.Message, ResponseCode.InternalServerError);
+            }
         }
 
         public async Task<ApiResponse<Customer>> GetByIdAsync(int customerId, CancellationToken cancellationToken)

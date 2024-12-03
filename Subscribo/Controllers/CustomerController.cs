@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Subscribo.Core.Abstractions.Interfaces.Managers;
 using Subscribo.Core.Abstractions.Models.Requests;

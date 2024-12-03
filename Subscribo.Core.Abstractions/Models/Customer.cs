@@ -2,9 +2,9 @@
 {
     public record Customer
     {
-        public required int Id { get; init; }
-        public required string Name { get; set; }
-        public required string Email { get; set; }
-        public required ICollection<Subscription> Subscriptions { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public ICollection<Subscription> Subscriptions { get; set; }
     }
 }
