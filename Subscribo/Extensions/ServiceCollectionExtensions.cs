@@ -12,17 +12,17 @@ namespace Subscribo.Host.WebApi.Extensions
         public static void AddRegistrations(this IServiceCollection services)
         {
             //Services
-            services.AddSingleton<ICustomerService, CustomerService>();
-            services.AddSingleton<IInvoiceService, InvoiceService>();
-            services.AddSingleton<ISubscriptionService, SubscriptionService>();
+            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IInvoiceService, InvoiceService>();
+            services.AddTransient<ISubscriptionService, SubscriptionService>();
 
             //Managers
             services.AddSingleton<ICustomerManager, CustomerManager>();
 
             //Repositories
-            services.AddSingleton<ICustomerRepository, CustomerRepository>();
-            services.AddSingleton<IInvoiceRepository, InvoiceRepository>();
-            services.AddSingleton<ISubscriptionRepository, SubscriptionRepository>();
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<IInvoiceRepository, InvoiceRepository>();
+            services.AddTransient<ISubscriptionRepository, SubscriptionRepository>();
         }
     }
 }

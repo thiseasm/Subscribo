@@ -19,6 +19,13 @@ namespace Subscribo
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
 
+            builder.Host.UseOrleans(siloBuilder =>
+            {
+                siloBuilder.UseLocalhostClustering();
+            })
+            .ConfigureLogging(logging => logging.AddConsole())
+            .UseConsoleLifetime();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
