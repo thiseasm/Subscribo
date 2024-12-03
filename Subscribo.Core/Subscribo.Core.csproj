@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Subscribo.Data\Subscribo.Data.csproj" />
-	  <ProjectReference Include="..\Subscribo.Core.Abstractions\Subscribo.Core.Abstractions.csproj" />
+	<ProjectReference Include="..\Subscribo.Core.Abstractions\Subscribo.Core.Abstractions.csproj" />
   </ItemGroup>
 
   <ItemGroup>
