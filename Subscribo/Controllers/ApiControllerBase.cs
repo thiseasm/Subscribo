@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Subscribo.Core.Abstractions.Models.Responses;
 
 namespace Subscribo.Host.WebApi.Controllers

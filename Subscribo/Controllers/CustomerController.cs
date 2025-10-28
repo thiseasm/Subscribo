@@ -1,9 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Subscribo.Core.Abstractions.Interfaces.Managers;
 using Subscribo.Core.Abstractions.Models.Requests;
-using Subscribo.Host.WebApi.Controllers;
 
-namespace Subscribo.Controllers
+namespace Subscribo.Host.WebApi.Controllers
 {
     [ApiController]
     [Route("customers")]

@@ -17,12 +17,7 @@ namespace Subscribo.Grains.Implementations
             var customerId = Convert.ToInt32(this.GetPrimaryKeyLong());
             var customer = await customerService.GetCustomerByIdAsync(customerId);
 
-            if (customer == null)
-            {
-                throw new EntityNotFoundException($"Customer with ID {customerId} does not exist.");
-            }
-
-            _customer = customer;
+            _customer = customer ?? throw new EntityNotFoundException($"Customer with ID {customerId} does not exist.");
         }
 
         public async Task CancelCurrentSubscriptionAsync(CancellationToken cancellationToken)

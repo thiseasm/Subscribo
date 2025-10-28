@@ -22,7 +22,7 @@ namespace Subscribo.Core.Managers
             }
             catch (Exception e) 
             {
-                string errorMessage = $"{nameof(CustomerManager)} - {nameof(CreateCustomerAsync)} failed with error: {e.Message}";
+                var errorMessage = $"{nameof(CustomerManager)} - {nameof(CreateCustomerAsync)} failed with error: {e.Message}";
                 logger.LogError(errorMessage);
                 return ApiResponse<int>.Fail(e.Message, ResponseCode.InternalServerError);
             }
@@ -38,13 +38,13 @@ namespace Subscribo.Core.Managers
             }
             catch (EntityNotFoundException e) 
             {
-                string errorMessage = $"{nameof(CustomerManager)} - {nameof(GetByIdAsync)} failed with error: {e.Message}";
+                var errorMessage = $"{nameof(CustomerManager)} - {nameof(GetByIdAsync)} failed with error: {e.Message}";
                 logger.LogWarning(errorMessage);
                 return ApiResponse<Customer>.Fail(e.Message, ResponseCode.NotFound);
             }
             catch (Exception e) 
             {
-                string errorMessage = $"{nameof(CustomerManager)} - {nameof(GetByIdAsync)} failed with error: {e.Message}";
+                var errorMessage = $"{nameof(CustomerManager)} - {nameof(GetByIdAsync)} failed with error: {e.Message}";
                 logger.LogError(errorMessage);
                 return ApiResponse<Customer>.Fail(e.Message, ResponseCode.InternalServerError);
             }
